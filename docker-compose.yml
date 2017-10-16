@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build: .
+    container_name: web
+    env_file: .env
+    command: sh /web/scripts/startup.sh
+    #command: sh /web//scripts/install.sh
+    ports:
+     - "81:3000"
+    volumes:
+     - .:/web
